@@ -104,7 +104,7 @@ do
 
 //EJERCICIO 3
 
-float op, resp, num1, num2;
+/*float op, resp, num1, num2;
 
 do
 {
@@ -214,4 +214,116 @@ if(cont1 && cont2){
 
 }else{
     Console.WriteLine("Algun dato Ingresado no es un numero, Ingrese nuevamente");
+}*/
+
+//EJERCICIO 4
+
+/*Siguiendo con el ejemplo de la calculadora (ejercicio 2) ingrese una ecuación
+simple como cadena de caracteres y que el sistema lo resuelva. Por ej. ingrese
+por pantalla “582+2” y que le devuelva la suma de 582 con 2*/
+
+string ecuacion;
+char operador='o';
+int resultado;
+
+Console.WriteLine("Ingrese una Ecuacion Simple: ");
+ecuacion=Console.ReadLine();
+
+string[] numeros=ecuacion.Split('+','-','*','/');
+
+foreach(char caracter in ecuacion)
+{
+    if(caracter=='+' || caracter=='-' || caracter=='*' || caracter=='/')
+    {
+        operador=caracter;
+    }
+}
+
+//Convierto Los numeros de la cadema en texto
+int num1=int.Parse(numeros[0]);
+int num2=int.Parse(numeros[1]);
+
+switch (operador)
+{
+    case '+':
+    resultado=num1+num2;
+    Console.WriteLine("La suma entre "+numeros[0]+" y "+numeros[1]+" es: "+resultado);
+    break;
+
+    case '-':
+    resultado=num1-num2;
+    Console.WriteLine("La Resta entre "+numeros[0]+" y "+numeros[1]+" es: "+resultado);
+    break;
+
+    case '*':
+    resultado=num1*num2;
+    Console.WriteLine("El Producto entre "+numeros[0]+" y "+numeros[1]+" es: "+resultado);
+    break;
+
+    case '/':
+    resultado=num1/num2;
+    Console.WriteLine("La Division entre "+numeros[0]+" y "+numeros[1]+" es: "+resultado);
+    break;
+
+    default:
+    Console.WriteLine("La Operacion Ingresada no existe");
+    break;
+}
+
+string cadena, cadena2, nuevaCad, subCad;
+
+Console.WriteLine("Ingrese una Cadena de Texto: ");
+cadena=Console.ReadLine();
+
+Console.WriteLine("Ingrese otra Cadena de Texto: ");
+cadena2=Console.ReadLine();
+
+Console.WriteLine("La longitud de la Cadena "+cadena+" es: "+cadena.Length);
+
+nuevaCad=cadena+""+cadena2;
+Console.WriteLine("Cadena Concatenada entre "+cadena+" y "+cadena2+": "+nuevaCad);
+
+if(cadena.Length>1)
+{
+    subCad=cadena.Substring(0,1);
+    Console.WriteLine("Subcadena de "+cadena+": "+subCad);
+}
+
+/*Recorrer la cadena de texto con un ciclo Foreach e ir mostrando elemento por
+elemento en pantalla*/
+foreach (char caracter in nuevaCad)
+{
+    Console.WriteLine(caracter);
+}
+
+//Convierta la cadena a mayúsculas y luego a minúsculas.
+cadena=cadena.ToUpper();
+Console.WriteLine("Cadena en Mayusculas: "+cadena);
+
+cadena=cadena.ToLower();
+Console.WriteLine("Cadena en Minusculas: "+cadena);
+
+/*Ingrese una cadena separada por caracteres que usted determine y muestre por
+pantalla los resultados (Revisar el comportamiento de split())*/
+string frase="Hola, cómo estás, amigo?";
+// Divido la cadena en subcadenas usando ',' como delimitador
+string[] subcadenas=frase.Split(',');
+        
+foreach (string subcadena in subcadenas)
+{
+    Console.WriteLine(subcadena);
+}
+
+//Buscar la ocurrencia de una palabra determinada en la cadena ingresada
+Console.WriteLine("Ingrese una cadena larga: ");
+string cadenaLarga=Console.ReadLine();
+
+Console.WriteLine("Ingrese una Palabra para buscar en la cadena antes escrita: ");
+string palabra=Console.ReadLine();
+
+if(cadenaLarga.Contains(palabra))
+{
+    Console.WriteLine("La palabra '" + palabra + "' está presente en la cadena.");
+}else{
+    Console.WriteLine("La palabra '" + palabra + "' No está presente en la cadena.");
 }

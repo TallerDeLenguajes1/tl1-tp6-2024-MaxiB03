@@ -45,7 +45,6 @@ if(control)
 //op=int.Parse(Console.ReadLine()); //Entrada como cadena y Convierte la cadena en entero
 
 //EJERCICIO 2
-
 int op, resp, num1, num2;
 
 do

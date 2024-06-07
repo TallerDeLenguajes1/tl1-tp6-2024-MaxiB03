@@ -222,7 +222,7 @@ if(cont1 && cont2){
 simple como cadena de caracteres y que el sistema lo resuelva. Por ej. ingrese
 por pantalla “582+2” y que le devuelva la suma de 582 con 2*/
 
-string ecuacion;
+string? ecuacion;
 char operador='o';
 int resultado;
 
@@ -270,7 +270,7 @@ switch (operador)
     break;
 }
 
-string cadena, cadena2, nuevaCad, subCad;
+string? cadena, cadena2, nuevaCad, subCad;
 
 Console.WriteLine("Ingrese una Cadena de Texto: ");
 cadena=Console.ReadLine();
@@ -316,10 +316,10 @@ foreach (string subcadena in subcadenas)
 
 //Buscar la ocurrencia de una palabra determinada en la cadena ingresada
 Console.WriteLine("Ingrese una cadena larga: ");
-string cadenaLarga=Console.ReadLine();
+string? cadenaLarga=Console.ReadLine();
 
 Console.WriteLine("Ingrese una Palabra para buscar en la cadena antes escrita: ");
-string palabra=Console.ReadLine();
+string? palabra=Console.ReadLine();
 
 if(cadenaLarga.Contains(palabra))
 {
